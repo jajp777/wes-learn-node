@@ -13,6 +13,7 @@ const routes = require('./routes/index');
 const helpers = require('./helpers');
 const errorHandlers = require('./handlers/errorHandlers');
 
+require('./handlers/passport.js');
 // create our Express app
 const app = express();
 
@@ -79,7 +80,7 @@ if (app.get('env') === 'development') {
   /* Development Error Handler - Prints stack trace */
   app.use(errorHandlers.developmentErrors);
 }
-
+//console.log(app.get('env'));
 // production error handler
 app.use(errorHandlers.productionErrors);
 

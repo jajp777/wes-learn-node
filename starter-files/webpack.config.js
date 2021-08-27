@@ -73,7 +73,10 @@ const config = {
   plugins: [
     // here is where we tell it to output our css to a separate file
     new ExtractTextPlugin('style.css'),
-  ]
+  ],
+  node : {
+    fs: 'empty',
+  }
 };
 // webpack is cranky about some packages using a soon to be deprecated API. shhhhhhh
 process.noDeprecation = true;
